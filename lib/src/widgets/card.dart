@@ -93,16 +93,13 @@ List<Widget> cards() {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.0),
+            const ListTile(
+              contentPadding: EdgeInsets.all(0.0),
               // wrap title in transform template
-              title: Transform.translate(
-                offset: const Offset(0, -5),
-                child: const Text(
-                  'Dev',
-                  style: TextStyle(color: Colors.blueGrey),
-                  textAlign: TextAlign.center,
-                ),
+              title: Text(
+                'Dev',
+                style: TextStyle(color: Colors.blueGrey),
+                textAlign: TextAlign.center,
               ),
             ),
             const Divider(
@@ -173,15 +170,12 @@ List<Widget> cards() {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.0),
-              title: Transform.translate(
-                offset: const Offset(0.0, -5.0),
-                child: const Text(
-                  'Media',
-                  style: TextStyle(color: Colors.green),
-                  textAlign: TextAlign.center,
-                ),
+            const ListTile(
+              contentPadding: EdgeInsets.all(0.0),
+              title: Text(
+                'Media',
+                style: TextStyle(color: Colors.green),
+                textAlign: TextAlign.center,
               ),
             ),
             const Divider(

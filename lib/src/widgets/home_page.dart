@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:startpage/src/widgets/settings_modal.dart';
+import 'date_time.dart';
+import 'settings_modal.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 import 'card.dart';
@@ -49,6 +50,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -74,62 +77,77 @@ class _HomePageState extends State<HomePage> {
             ),
             child: Column(
               children: <Widget>[
-                // search bar
-                Container(
-                  margin: const EdgeInsets.only(top: 150),
-                ),
-                Text(date),
-                Text(time),
-                Container(
-                  margin: const EdgeInsets.only(
-                      top: 50.0, left: 100.0, right: 100.0),
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          onChanged: (value) {
-                            setState(() {
-                              searchQuery = value;
-                            });
-                          },
-                          onFieldSubmitted: (value) {
-                            setState(() {
-                              searchQuery = value;
-                            });
-                            js.context.callMethod('open', [
-                              'https://$searchProvider.com/search?q=$searchQuery'
-                            ]);
-                          },
-                          decoration: InputDecoration(
-                            hintText: 'Search',
-                            border: const OutlineInputBorder(),
-                            suffixIcon: IconButton(
-                              icon: const Icon(Icons.search),
-                              onPressed: () {
-                                // open crafted url in a new tab
-                                js.context.callMethod('open', [
-                                  'https://$searchProvider.com/search?q=$searchQuery'
-                                ]);
-                              },
+                Row(
+                  children: [
+                    Expanded(child: Container(), flex: 1),
+                    Expanded(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: const EdgeInsets.only(top: 150),
                             ),
-                          ),
+                            dateTime(date, time),
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  top: 50.0, left: 100.0, right: 100.0),
+                              height: MediaQuery.of(context).size.height * 0.1,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Form(
+                                    key: _formKey,
+                                    child: Expanded(
+                                      child: TextFormField(
+                                        textAlign: TextAlign.center,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            searchQuery = value;
+                                          });
+                                        },
+                                        onFieldSubmitted: (value) {
+                                          setState(() {
+                                            searchQuery = value;
+                                          });
+                                          js.context.callMethod('open', [
+                                            'https://$searchProvider.com/search?q=$searchQuery'
+                                          ]);
+                                          _formKey.currentState!.reset();
+                                        },
+                                        decoration: InputDecoration(
+                                          hintText: 'Search',
+                                          border: const OutlineInputBorder(),
+                                          suffixIcon: IconButton(
+                                            icon: const Icon(Icons.search),
+                                            onPressed: () {
+                                              js.context.callMethod('open', [
+                                                'https://$searchProvider.com/search?q=$searchQuery'
+                                              ]);
+                                              _formKey.currentState!.reset();
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 50.0),
+                              padding: const EdgeInsets.only(
+                                  left: 100.0, right: 100.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: cards(),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 50.0),
-                  padding: const EdgeInsets.only(left: 100.0, right: 100.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: cards(),
-                  ),
+                        flex: 8),
+                    Expanded(child: Container(), flex: 1),
+                  ],
                 ),
               ],
             ),
