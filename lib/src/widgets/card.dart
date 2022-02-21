@@ -118,7 +118,7 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context.callMethod('open', ['https://github.com']);
               },
             ),
             ListTile(
@@ -130,7 +130,7 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context.callMethod('open', ['https://gist.github.com']);
               },
             ),
             ListTile(
@@ -142,7 +142,8 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context.callMethod(
+                    'open', ['https://web.compass.lighthouselabs.ca/']);
               },
             ),
             ListTile(
@@ -154,7 +155,7 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context.callMethod('open', ['https://udemy.com']);
               },
             ),
             // dev card
@@ -196,7 +197,8 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context
+                    .callMethod('open', ['https://torrents.jettscythe.xyz']);
               },
             ),
             ListTile(
@@ -208,7 +210,8 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context
+                    .callMethod('open', ['https://jellyfin.jettscythe.xyz']);
               },
             ),
             ListTile(
@@ -220,7 +223,7 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context.callMethod('open', ['https://youtube.com']);
               },
             ),
             ListTile(
@@ -232,7 +235,7 @@ List<Widget> cards() {
                 ],
               ),
               onTap: () {
-                js.context.callMethod('open', ['https://bbc.com']);
+                js.context.callMethod('open', ['https://www.primevideo.com']);
               },
             ),
             // dev card

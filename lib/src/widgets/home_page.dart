@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:startpage/src/widgets/settings_modal.dart';
-import '../screens/home.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 import 'card.dart';
