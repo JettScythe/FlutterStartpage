@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<String> _searchProviders = [
     'Google',
+    'Brave',
     'DDG',
     'SearchX',
     'Bing',
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                                             searchQuery = value;
                                           });
                                           js.context.callMethod('open', [
-                                            'https://$searchProvider.com/search?q=$searchQuery'
+                                            'https://${searchProviderSuffix(searchProvider)}$searchQuery'
                                           ]);
                                           _formKey.currentState!.reset();
                                         },
@@ -120,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                                             icon: const Icon(Icons.search),
                                             onPressed: () {
                                               js.context.callMethod('open', [
-                                                'https://$searchProvider.com/search?q=$searchQuery'
+                                                'https://${searchProviderSuffix(searchProvider)}$searchQuery'
                                               ]);
                                               _formKey.currentState!.reset();
                                             },
@@ -155,5 +156,24 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+}
+
+String searchProviderSuffix(String searchProvider) {
+  // returns the search provider with the correct suffix
+  if (searchProvider == 'Google') {
+    return 'google.com/search?q=';
+  } else if (searchProvider == 'Brave') {
+    return 'search.brave.com/search?q=';
+  } else if (searchProvider == 'DDG') {
+    return 'duckduckgo.com/?q=';
+  } else if (searchProvider == 'SearchX') {
+    return 'searx-private-search.de/search?q=';
+  } else if (searchProvider == 'Bing') {
+    return 'bing.com/search?q=';
+  } else if (searchProvider == 'Yahoo') {
+    return 'yahoo.com/search?p=';
+  } else {
+    throw Exception('Search provider not found');
   }
 }
