@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     'Google',
     'Brave',
     'DDG',
-    'SearchX',
+    'SearX',
     'Bing',
     'Yahoo'
   ];
