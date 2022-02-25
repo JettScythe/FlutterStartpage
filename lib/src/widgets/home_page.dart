@@ -167,8 +167,8 @@ String searchProviderSuffix(String searchProvider) {
     return 'search.brave.com/search?q=';
   } else if (searchProvider == 'DDG') {
     return 'duckduckgo.com/?q=';
-  } else if (searchProvider == 'SearchX') {
-    return 'searx-private-search.de/search?q=';
+  } else if (searchProvider == 'SearX') {
+    return 'searx.jettscythe.xyz/search?q=';
   } else if (searchProvider == 'Bing') {
     return 'bing.com/search?q=';
   } else if (searchProvider == 'Yahoo') {

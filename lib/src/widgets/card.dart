@@ -33,7 +33,7 @@ List<Widget> cards() {
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.person),
+                    Icon(Icons.tag),
                     Text(
                       'Twitter',
                       textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ List<Widget> cards() {
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.chat),
+                    Icon(Icons.forum),
                     Text('Member'),
                   ],
                 ),
@@ -110,7 +110,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.code),
+                  Icon(Icons.source),
                   Text('Github'),
                 ],
               ),
@@ -134,7 +134,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.code),
+                  Icon(Icons.terminal),
                   Text('Compass'),
                 ],
               ),
@@ -147,7 +147,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.code),
+                  Icon(Icons.school),
                   Text('Udemy'),
                 ],
               ),
@@ -186,7 +186,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.camera),
+                  Icon(Icons.downloading),
                   Text('Torrents'),
                 ],
               ),
@@ -199,7 +199,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.camera),
+                  Icon(Icons.movie),
                   Text('Jellyfin'),
                 ],
               ),
@@ -212,7 +212,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.video_library),
+                  Icon(Icons.subscriptions),
                   Text('Youtube'),
                 ],
               ),
@@ -224,7 +224,7 @@ List<Widget> cards() {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.featured_video),
+                  Icon(Icons.video_library),
                   Text('Prime Video'),
                 ],
               ),
