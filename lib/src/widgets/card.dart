@@ -8,7 +8,6 @@ List<Widget> cards() {
     Expanded(
       child: Card(
         // make slightly opaque
-        color: const Color.fromARGB(255, 61, 61, 61).withOpacity(0.9),
         margin: const EdgeInsets.all(10.0),
         child: Center(
           child: Column(
@@ -87,7 +86,6 @@ List<Widget> cards() {
     ),
     Expanded(
       child: Card(
-        color: const Color.fromARGB(255, 61, 61, 61).withOpacity(0.9),
         margin: const EdgeInsets.all(10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -164,7 +162,6 @@ List<Widget> cards() {
     ),
     Expanded(
       child: Card(
-        color: const Color.fromARGB(255, 61, 61, 61).withOpacity(0.9),
         margin: const EdgeInsets.all(10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

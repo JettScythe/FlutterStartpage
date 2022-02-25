@@ -20,10 +20,10 @@ class _HomePageState extends State<HomePage> {
       '${DateTime.now().hour}:${DateTime.now().minute}:${DateTime.now().second}';
 
   final List<String> _searchProviders = [
+    'SearX',
     'Google',
     'Brave',
     'DDG',
-    'SearX',
     'Bing',
     'Yahoo'
   ];
