@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
         valueListenable: darkNotifier,
         builder: (BuildContext context, bool isDark, Widget? child) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Home',
             // a theme that toggles the color and text of the cards and icons based on isDark
             theme: ThemeData(
               brightness: isDark ? Brightness.dark : Brightness.light,

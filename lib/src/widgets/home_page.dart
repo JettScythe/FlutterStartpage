@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                                             searchQuery = value;
                                           });
                                           js.context.callMethod('open', [
-                                            'https://${searchProviderSuffix(searchProvider)}$searchQuery'
+                                            '${providerURLBuilder(searchProvider)}$searchQuery'
                                           ]);
                                           _formKey.currentState!.reset();
                                         },
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                                             icon: const Icon(Icons.search),
                                             onPressed: () {
                                               js.context.callMethod('open', [
-                                                'https://${searchProviderSuffix(searchProvider)}$searchQuery'
+                                                '${providerURLBuilder(searchProvider)}$searchQuery'
                                               ]);
                                               _formKey.currentState!.reset();
                                             },
@@ -159,21 +159,21 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-String searchProviderSuffix(String searchProvider) {
-  // returns the search provider with the correct suffix
-  if (searchProvider == 'Google') {
-    return 'google.com/search?q=';
-  } else if (searchProvider == 'Brave') {
-    return 'search.brave.com/search?q=';
-  } else if (searchProvider == 'DDG') {
-    return 'duckduckgo.com/?q=';
-  } else if (searchProvider == 'SearX') {
-    return 'searx.jettscythe.xyz/search?q=';
-  } else if (searchProvider == 'Bing') {
-    return 'bing.com/search?q=';
-  } else if (searchProvider == 'Yahoo') {
-    return 'yahoo.com/search?p=';
-  } else {
-    throw Exception('Search provider not found');
+String providerURLBuilder(String searchProvider) {
+  String suffix = '/search?q=';
+  String prefix = '';
+  String tld = '.com';
+  if (searchProvider == 'DDG') {
+    searchProvider = 'DuckDuckGo';
+    suffix = '/?q=';
   }
+  if (searchProvider == 'Brave') {
+    prefix = 'search.';
+  }
+  if (searchProvider == 'SearX') {
+    prefix = 'searx.';
+    searchProvider = 'jettscythe';
+    tld = '.xyz';
+  }
+  return 'https://$prefix${searchProvider.toLowerCase()}$tld$suffix';
 }
