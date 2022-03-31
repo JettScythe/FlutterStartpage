@@ -71,8 +71,7 @@ class _HomePageState extends State<HomePage> {
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                    'https://images.unsplash.com/photo-1531278520962-fcf47a2faea2'),
+                image: AssetImage('assets/images/bg.jpeg'),
                 fit: BoxFit.cover,
               ),
             ),
