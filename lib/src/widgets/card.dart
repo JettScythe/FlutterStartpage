@@ -153,9 +153,6 @@ List<Widget> cards() {
                 js.context.callMethod('open', ['https://udemy.com']);
               },
             ),
-            // dev card
-            // media card
-            // forums
           ],
         ),
       ),
@@ -189,7 +186,7 @@ List<Widget> cards() {
               ),
               onTap: () {
                 js.context
-                    .callMethod('open', ['https://torrents.jettscythe.xyz']);
+                    .callMethod('open', ['https://torrents.jettscythe.local']);
               },
             ),
             ListTile(
@@ -229,9 +226,79 @@ List<Widget> cards() {
                 js.context.callMethod('open', ['https://www.primevideo.com']);
               },
             ),
-            // dev card
-            // media card
-            // forums
+          ],
+        ),
+      ),
+    ),
+    Expanded(
+      child: Card(
+        margin: const EdgeInsets.all(10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              contentPadding: EdgeInsets.all(0.0),
+              title: Text(
+                'Local',
+                style: TextStyle(color: Colors.pink),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const Divider(
+              height: 0,
+              color: Colors.pink ,
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.downloading),
+                  Text('Sonarr'),
+                ],
+              ),
+              onTap: () {
+                js.context
+                    .callMethod('open', ['https://sonarr.jettscythe.local']);
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.movie),
+                  Text('Radarr'),
+                ],
+              ),
+              onTap: () {
+                js.context
+                    .callMethod('open', ['https://radarr.jettscythe.local']);
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.subscriptions),
+                  Text('Lidarr'),
+                ],
+              ),
+              onTap: () {
+                js.context.callMethod('open', ['https://lidarr.jettscythe.local']);
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.video_library),
+                  Text('Readarr'),
+                ],
+              ),
+              onTap: () {
+                js.context.callMethod('open', ['https://readarr.jettscythe.local']);
+              },
+            ),
           ],
         ),
       ),
